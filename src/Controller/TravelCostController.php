@@ -60,7 +60,7 @@ class TravelCostController extends AbstractController
                 $discount = min(0.07 * $childDiscountedCost, $maxDiscount);
             } elseif ($paymentDate >= new DateTime($paymentDate->format('Y') . '-12-01') && $paymentDate < new DateTime($paymentDate->format('Y') + 1 . '-01-01')) {
                 $discount = min(0.05 * $childDiscountedCost, $maxDiscount);
-            } elseif ($paymentDate >= new DateTime($paymentDate->format('Y') + 1 . '-01-01') && $paymentDate < new DateTime($paymentDate->format('Y') + 1 . '-02-01')) {
+            } elseif ($paymentDate >= new DateTime($paymentDate->format('Y') . '-01-01') && $paymentDate < new DateTime($paymentDate->format('Y')  . '-02-01')) {
                 $discount = min(0.03 * $childDiscountedCost, $maxDiscount);
             }
         }
@@ -77,7 +77,7 @@ class TravelCostController extends AbstractController
         }
 
         // Условия для путешествий с 15 января следующего года и далее
-        elseif ($travelDate > new DateTime($travelDate->format('Y') + 1 . '-01-14')) {
+        elseif ($travelDate > new DateTime($travelDate->format('Y') . '-01-14')) {
             if ($paymentDate >= new DateTime($paymentDate->format('Y') . '-08-01') && $paymentDate < new DateTime($paymentDate->format('Y') . '-09-01')) {
                 $discount = min(0.07 * $childDiscountedCost, $maxDiscount);
             } elseif ($paymentDate >= new DateTime($paymentDate->format('Y') . '-09-01') && $paymentDate < new DateTime($paymentDate->format('Y') . '-10-01')) {

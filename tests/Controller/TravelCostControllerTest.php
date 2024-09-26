@@ -11,7 +11,7 @@ class TravelCostControllerTest extends WebTestCase
 
         $client->request('POST', '/calculate-cost', [], [], [], json_encode([
             'base_cost' => 10000,
-            'children' => "01.01.2020",
+            'participant' => "01.01.2020",
             'payment_date' => '20.12.2024',
             'travel_date' => '21.09.2025'
         ]));
